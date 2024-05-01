@@ -1,9 +1,12 @@
 package BD;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -13,6 +16,12 @@ public class User {
 	private String name;
 	private String mail;
 	private String password;
+	
+	@OneToMany
+	private Collection<Notification> notifications;
+	
+	@OneToMany
+	private Collection<Application> applications;
 	
 	public User() {
 		super();
@@ -51,6 +60,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public Collection<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Collection<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+    public Collection<Application> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(Collection<Application> applications) {
+        this.applications = applications;
     }
 	
 }

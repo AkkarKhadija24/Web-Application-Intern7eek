@@ -17,9 +17,6 @@ public class Notification {
 	private Date date;
 	private boolean read;
 	
-	@OneToMany
-	private Collection<User> users;
-	
 	public Notification() {
 		super();
 	}
@@ -66,14 +63,6 @@ public class Notification {
 
     public void setRead(boolean read) {
         this.read = read;
-    }
-
-    public Collection<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Collection<User> users) {
-        this.users = users;
     }
 	
 }

@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Application {
@@ -18,11 +16,6 @@ public class Application {
 	private Date date;
 	private String state;
 	
-	@ManyToMany
-    private Collection<Domain> domain;
-	
-	@OneToMany
-	private Collection<User> users;
 	public Application () {
 		super();
 	}
@@ -66,19 +59,4 @@ public class Application {
         this.state = state;
     }
 
-    public Collection<Domain> getDomain() {
-        return domain;
-    }
-
-    public void setDomain(Collection<Domain> domain) {
-        this.domain = domain;
-    }
-    
-    public Collection<User> getUsers() {
-        return this.users;
-    }
-
-    public void setUsers(Collection<User> users) {
-        this.users = users;
-    }
 }
