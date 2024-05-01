@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="stylesStudent.css">
+    <style>
+        body {
+            background-image: url('imagesBackground/autres/StudentSpace2.avif');
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div center>
+        	<img src="imagesBackground/intern7eek.png" alt="Logo Inter7eek">
+        </div>
+        
+        <span>Welcome to the Companies Authentication Portal </span>
+
+        <span>INTERN7EEK</span>
+
+        
+    </div>
+    <div class="signupCompanyContainer">
+        <h2>Create an account </h2>
+
+        <form action="Servlet" method="post">
+
+            <div class="input-groupsignupCompany">
+                <label for="CompanyName">Company name </label>
+                <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
+                <input type="text" id="CompanyName" name="CompanyName" required>
+
+                <label for="email">Email Address </label>
+                <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+            <div class="input-groupsignupCompany">
+                <label for="domaine">Domain </label>
+                <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
+                <input type="text" id="domaine" name="domaine" required>
+
+                <label for="password">Password </label>
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-groupsignupCompany">
+                <label for="description">Description</label>
+                <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
+                <input type="text" id="description" name="description" required>
+
+                <label for="verify_password">Verify Password </label>
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" id="verify_password" name="verify_password" required>
+            
+            </div>
+
+            <div class="input-groupsignupCompany">
+                <label for="reference">Reference</label>
+                <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <input type="text" id="reference" name="reference" required>
+            </div>
+
+            <input type="hidden" name="action" value="signup">       
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>

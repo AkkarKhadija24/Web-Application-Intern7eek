@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Pour occuper au moins la hauteur de la fenêtre */
+    background-color: #f4f4f4; /* Couleur de fond */
+}
+
+.navbar {
+    position: fixed; /* Changement de position à fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 89px;
+    background-color: #DEC4FF;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 999; /* Pour être au-dessus du contenu */
+}
+
+.navbar img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.rectangle-15 {
+    position: absolute;
+    top: 50%; /* Positionnement au milieu de la page */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage avec translate */
+    width: 364px;
+    height: 367px;
+    background: #B681FA; /* Couleur de fond du rectangle */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+form {
+    width: 100%; /* Pour prendre toute la largeur du conteneur */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #D9D9D9;
+    color: rgb(81, 18, 191);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #D9D9D9;
+}
