@@ -1,7 +1,7 @@
 import axios from 'axios'; 
 
 // URL du backend pour la connexion
-const LOGIN_URL = "/ProjetJEEIntern7eek/rest/login";
+const LOGIN_URL = "/Intern7eek/rest/login";
 
 // Fonction pour se connecter
 export async function login(email, password) {
