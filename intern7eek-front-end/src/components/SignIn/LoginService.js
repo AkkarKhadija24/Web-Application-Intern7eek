@@ -12,7 +12,7 @@ export async function login(email, password) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
     };
-    const response = await fetch("/back-end/rest/login", requestOptions);
+    const response = await fetch(LOGIN_URL, requestOptions);
     if (!response.ok) {
         const error = await response.text();
         throw new Error(error);
