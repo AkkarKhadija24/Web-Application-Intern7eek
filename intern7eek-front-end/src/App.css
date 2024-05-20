@@ -1,15 +1,15 @@
-body {
+/*body {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Pour occuper au moins la hauteur de la fenêtre */
-  background-color: #f4f4f4; /* Couleur de fond */
-}
+  min-height: 100vh; 
+  background-color: #f4f4f4; 
+}*/
 
-.navbar {
-  position: fixed; /* Changement de position à fixed */
+/*.navbar {
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
@@ -19,7 +19,7 @@ body {
   padding: 10px;
   display: flex;
   align-items: center;
-  z-index: 999; /* Pour être au-dessus du contenu */
+  z-index: 999; 
 }
 
 .navbar img {
@@ -38,4 +38,4 @@ body {
 .footer p {
   text-align: center;
   color: #000000;
-}
+}*/

@@ -1,5 +1,8 @@
 package Model;
 import BD.*;
+
+import java.awt.PageAttributes.MediaType;
+
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +18,24 @@ public class Facade {
 
     @PersistenceContext
     EntityManager em;
-
+    
+    @POST
+	@Path("/addcompany")
+    @Consumes({ "application/json" })
+	public Response addCompany(Company p) {
+		System.out.println("coucou");
+		/*em.persist(p);
+		return null;*/
+		try {
+            em.persist(p);
+            return Response.ok().entity("{\"message\": \"Company registered successfully\"}").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                           .entity("{\"message\": \"Error registering company\"}")
+                           .build();
+        }
+	}
+    
     @POST
     @Path("/login")
     @Consumes({ "application/json" })
@@ -38,7 +58,8 @@ class LoginRequest {
     private String password;
 
     // Getters et setters
-    public String getEmail() {back-end
+    public String getEmail() {
+    	//back-end
         return email;
     }
 

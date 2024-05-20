@@ -2,21 +2,16 @@ import React from 'react';
 import './App.css';
 // import './components/styles.css';
 import Login from './components/SignIn/Login';
+import SignUpCompany from './components/SignUpEntreprise/SignUpCompany';
+import NavBar from './components/SignUpEntreprise/NavBar';
+import Footer from './components/SignUpEntreprise//Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="navbar">
-        <div>
-          <img src="imagesBackground/intern7eek.png" alt="Logo Inter7eek" />
-        </div>
-        <span>Welcome To The Authentication Portal</span>
-        <span>INTERN7EEK</span>
-      </header>
-      <Login />
-      <footer className="footer">
-        <p>INTERN7EEK &copy; 2024</p>
-      </footer>
+      <NavBar />
+      <SignUpCompany/>
+      <Footer />     
     </div>
   );
 }

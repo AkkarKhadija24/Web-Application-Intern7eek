@@ -1,0 +1,69 @@
+.body {
+    /*font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;*/
+
+    background-image: "imagesBackground/HOMEBackground.avif"; 
+    /*background-size: cover; /* l'image couvre toute la surface du corps */
+    /*background-position: center; /* centrer l'image */
+    /*background-repeat: no-repeat; /* empêcher l'image de se répéter */
+
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.signupCompanyContainer {
+    width: 700px;
+    margin: 70px auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-groupsignupCompany {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input-groupsignupCompany label {
+    flex: 2; 
+    margin-right: 40px;
+    /*align-items: center; /* Pour aligner l'icône verticalement */
+}
+ 
+.input-groupsignupCompany label .svg-inline--fa {
+    flex: 0.5; 
+    margin-right: 10px;
+}
+
+.input-groupsignupCompany input {
+    flex: 4; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; 
+}
+
+
+  
+
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
