@@ -1,108 +1,19 @@
-body {
+/* Styles pour Login.html */
+.body {
+    /*font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;*/
+
+    background-image: "imagesBackground/HOMEBackground.avif"; 
+    /*background-size: cover; /* l'image couvre toute la surface du corps */
+    /*background-position: center; /* centrer l'image */
+    /*background-repeat: no-repeat; /* empêcher l'image de se répéter */
+
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    background-image: url('../../../public/imagesBackground/HOMEBackground.avif'); 
-    background-size: cover; /* l'image couvre toute la surface du corps */
-    background-position: center; /* centrer l'image */
-    background-repeat: no-repeat; /* empêcher l'image de se répéter */
-
 }
-
-.rectangle-15 {
-    position: absolute;
-    top: 50%; /* Positionnement au milieu de la page */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centrage avec translate */
-    width: 364px;
-    height: 367px;
-    background: #B681FA; /* Couleur de fond du rectangle */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
-form {
-    width: 100%; /* Pour prendre toute la largeur du conteneur */
-}
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-.column {
-    flex-basis: 50%;
-}
-
-
-.navbar {
-    background-color:  #cca9dd; 
-    color: #fff;
-    padding: 10px 10px; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   
-}
-.navbar img {
-    height: 80px;
-    width: auto;
-
-}
-
-.navbar span {
-    font-weight: bold; 
-    color:  #fff ;   
-}
-
-h1 {
-    margin: 0;
-}
-section {
-    padding: 20px;
-}
-
-/* Styles for cards */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: space-between;*/
-    justify-content: center; 
-    margin-top: 50px; 
-
-}
-
-
-.card {
-    width: calc(50% - 15px); /* espace entre les cartes */
-    min-height: 150px; 
-    background-color: #8a2be2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff; /* texte blanc */
-    text-decoration: none;
-    transition: box-shadow 0.5s; /* transition d'animation */
-    cursor: pointer;
-}
-
-.card-content {
-    padding: 20px; 
-    font-weight: bold; 
-}
-
-
-
-.card:hover {
-    box-shadow: 0px 0px 10px rgba(7, 6, 6, 0.84);
-}
-
 .loginContainer {
     width: 300px;
     margin: 100px auto;
@@ -124,20 +35,28 @@ input[type="submit"] {
     border: 1px solid #ccc;
     border-radius: 20px;
 }
-
-
 input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    background-color: #ebd4ab ;
+    color: #000;
+    font-weight: bold; 
     cursor: pointer;
-    transition: background-color 0.3s;
-}
 
+}
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #800080;
 }
 
+
+#create-account-student {
+    color: #808080 ;
+    display: block; 
+    margin-top: 10px; 
+    text-decoration: underline;
+
+}
+
+#create-account-company {
+    color: #800080; 
+    display: block; 
+    text-decoration: underline;
+}

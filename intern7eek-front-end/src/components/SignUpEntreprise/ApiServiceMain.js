@@ -1,11 +1,11 @@
 // URL du backend pour l'inscription de l'entreprise
-const SIGNUP_URL = "/Intern7eek/rest/addcompany";
+const SIGNUP_URL = "/back-end/rest/addcompany";
 
 // Fonction pour s'inscrire
 export async function signUpCompany(formData) {
     const requestOptions = {
         method: 'POST',
-        //mode: 'cors', 
+        mode: 'cors', 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
     };

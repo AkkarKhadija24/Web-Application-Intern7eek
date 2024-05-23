@@ -1,11 +1,7 @@
 package Model;
 import BD.*;
-
-<<<<<<< HEAD
 import java.awt.PageAttributes.MediaType;
-=======
 import java.util.List;
->>>>>>> 619cde0a2cb09ec08aeb7bb43e1370a2912cae0d
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
@@ -47,24 +43,32 @@ public class Facade {
     @Produces({ "application/json" })
     public Response login(LoginRequest loginRequest) {
         System.out.println("coucou");
-        
         // Logique de validation des identifiants
-        String mail = loginRequest.getEmail();
-        String password = loginRequest.getPassword();
-        System.out.println("mail : " + mail + " et mdp : " + password);
-        List<User> employeur = em.createQuery("SELECT u FROM User u WHERE u.mail = :mail AND u.password = :password", User.class)
-                                 .setParameter("mail", mail)
-                                 .setParameter("password", password)
-                                 .getResultList();
-
-        if (!employeur.isEmpty() && employeur.size() == 1) {
-            User user = employeur.get(0); // retourne le premier (et seul normalement) utilisateur trouvé
-            // Retourne une réponse de succès avec les détails de l'utilisateur
-            return Response.ok().entity(user).build();
+        // Pour l'instant, renvoyons une réponse de succès pour démonstration
+        if ("test@example.com".equals(loginRequest.getEmail()) && "password".equals(loginRequest.getPassword())) {
+            return Response.ok().entity("{\"message\": \"Utilisateur connecté avec succès\"}").build();
         } else {
-            // Retourne une réponse non autorisée si aucun utilisateur trouvé
             return Response.status(Response.Status.UNAUTHORIZED).entity("Identifiants incorrects").build();
         }
+        
+//        // Logique de validation des identifiants
+//        String mail = loginRequest.getEmail();
+//        String password = loginRequest.getPassword();
+//        System.out.println("mail : " + mail + " et mdp : " + password);
+//        List<User> employeur = em.createQuery("SELECT u FROM User u WHERE u.mail = :mail AND u.password = :password", User.class)
+//                                 .setParameter("mail", mail)
+//                                 .setParameter("password", password)
+//                                 .getResultList();
+//
+//        if (!employeur.isEmpty() && employeur.size() == 1) {
+//            User user = employeur.get(0); // retourne le premier (et seul normalement) utilisateur trouvé
+//            // Retourne une réponse de succès avec les détails de l'utilisateur
+//            return Response.ok().entity(user).build();
+//        } else {
+//            // Retourne une réponse non autorisée si aucun utilisateur trouvé
+//            return Response.status(Response.Status.UNAUTHORIZED).entity("Identifiants incorrects").build();
+//        }
+       
     }
 }
 // Classe pour représenter la requête de connexion
@@ -74,10 +78,6 @@ class LoginRequest {
 
     // Getters et setters
     public String getEmail() {
-<<<<<<< HEAD
-    	//back-end
-=======
->>>>>>> 619cde0a2cb09ec08aeb7bb43e1370a2912cae0d
         return email;
     }
 

@@ -1,18 +1,5 @@
-.body {
-    /*font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;*/
-
-    background-image: "imagesBackground/HOMEBackground.avif"; 
-    /*background-size: cover; /* l'image couvre toute la surface du corps */
-    /*background-position: center; /* centrer l'image */
-    /*background-repeat: no-repeat; /* empêcher l'image de se répéter */
-
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
+/* Ajoutez des styles CSS supplémentaires si nécessaire */
+/* Ne modifiez que les classes utilisées pour le formulaire de création de compte */
 
 .signupCompanyContainer {
     width: 700px;
@@ -24,34 +11,33 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.input-groupsignupCompany {
+.input-group-signupCompany {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
 }
 
-.input-groupsignupCompany label {
-    flex: 2; 
-    margin-right: 40px;
-    /*align-items: center; /* Pour aligner l'icône verticalement */
-}
- 
-.input-groupsignupCompany label .svg-inline--fa {
-    flex: 0.5; 
-    margin-right: 10px;
+.input-group-signupCompany label {
+    flex: 1;
+    margin-right: 20px;
+    text-align: right;
 }
 
-.input-groupsignupCompany input {
-    flex: 4; 
+.input-group-signupCompany label svg {
+    margin-right: 5px;
+}
+
+.input-group-signupCompany input,
+.input-group-signupCompany select {
+    flex: 2;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px; 
 }
 
-
-  
-
+.input-group-signupCompany select {
+    width: 100%;
+}
 
 input[type="submit"] {
     width: 100%;
