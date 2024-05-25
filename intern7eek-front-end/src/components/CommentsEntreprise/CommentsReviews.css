@@ -1,0 +1,45 @@
+/* CommentsReviews.css */
+
+.comments-reviews-container {
+    width: 80%;
+    margin: 70px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); /* Couleur de fond transparente */
+    backdrop-filter: blur(10px); /* Effet de flou */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.review-card h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    margin: 5px 0;
+}
