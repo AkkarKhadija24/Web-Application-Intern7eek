@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ApiService from './ApiServiceMain';
+import { useNavigate } from 'react-router-dom';
+import { signUpCompany } from './ApiServiceMain';
 import './SignUpCompany.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faUser, faLock } from '@fortawesome/free-solid-svg-icons';
-import { signUpCompany } from './ApiServiceMain';
 
 function SignUpForm() {
     const [name, setName] = useState('');
@@ -14,6 +14,8 @@ function SignUpForm() {
 
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -42,18 +44,18 @@ function SignUpForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Créez un objet Domain basé sur la valeur sélectionnée
             const domainObject = { name: selectedDomain };
             const formData = { 
                 name, 
                 reference, 
                 description, 
-                domain: domainObject, // Utiliser un objet Domain au lieu d'un tableau
+                domain: domainObject,
                 password, 
             };
             const response = await signUpCompany(formData);
             setSuccessMessage(response.message || 'Company registered successfully');
             setErrorMessage('');
+            navigate('/login');
         } catch (error) {
             setSuccessMessage('');
             setErrorMessage(error.message || 'An error occurred');
