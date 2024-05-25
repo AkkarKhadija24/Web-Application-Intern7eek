@@ -1,19 +1,5 @@
 /* Styles pour Login.html */
-.body {
-    /*font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;*/
 
-    background-image: "imagesBackground/HOMEBackground.avif"; 
-    /*background-size: cover; /* l'image couvre toute la surface du corps */
-    /*background-position: center; /* centrer l'image */
-    /*background-repeat: no-repeat; /* empêcher l'image de se répéter */
-
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
 .loginContainer {
     width: 300px;
     margin: 100px auto;

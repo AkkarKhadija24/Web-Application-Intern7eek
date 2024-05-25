@@ -63,10 +63,12 @@ function SignUpForm() {
     };
 
     return (
+
         <div className="signupCompanyContainer">
             <h2>Create an account</h2>
             {successMessage && <p className="success-message">{successMessage}</p>}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <hr />
             <form onSubmit={handleSubmit}>
                 <div className="input-group-signupCompany">
                     <label htmlFor="name">Company name <FontAwesomeIcon icon={faBuilding} /></label>
