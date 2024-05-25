@@ -16,15 +16,15 @@ function CompanySpace() {
             <div className="contentCompanySpace">
                 <h2>Welcome To Your Space!</h2>
                 <div className="card-containerCompanySpace">
-                    <Link to="/add-internship-offer" className="cardCompanySpace">
+                    <Link to="/addinternshipoffer" className="cardCompanySpace">
                         <FontAwesomeIcon icon={faBriefcase} className="card-icon" />
                         <span>Add New Internship Offer</span>
                     </Link>
-                    <Link to="/my-internships-offers" className="cardCompanySpace">
+                    <Link to="/myinternshipsofferscompany" className="cardCompanySpace">
                     <FontAwesomeIcon icon={faSearch} />
                         <span>My Internships Offers</span>
                     </Link>
-                    <Link to="/comments-reviews" className="cardCompanySpace">
+                    <Link to="/commentsreviews" className="cardCompanySpace">
                     <FontAwesomeIcon icon={faComments} />
                         <span>All Comments & Reviews </span>
                     </Link>
