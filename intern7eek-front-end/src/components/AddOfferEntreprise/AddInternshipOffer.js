@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding } from '@fortawesome/free-solid-svg-icons';
 import './AddInternOffer.css';
 import { addOffer } from './AddOfferService';
+import { useLocation } from 'react-router-dom';
 
 //function AddInternshipOffer({ onAddOffer }) 
 function AddInternshipOffer() {
@@ -17,7 +18,11 @@ function AddInternshipOffer() {
     const [errorMessage, setErrorMessage] = useState('');
 
     //const navigate = useNavigate();
-
+    const locationURL = useLocation();
+    const params = new URLSearchParams(locationURL.search);
+    const companyId = params.get('companyId');
+    //const queryParams = new URLSearchParams(locationURL.search);
+    //const companyId = queryParams.get('companyId');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -52,7 +57,7 @@ function AddInternshipOffer() {
         };
         
 
-        const response = await addOffer(offer);
+        const response = await addOffer(offer, companyId);
         setSuccessMessage(response.message || 'Company Offer internship registered successfully');
         setErrorMessage('');
         //navigate('/companyspace');

@@ -1,8 +1,7 @@
 // URL du backend 
-const OFFERINTERNSHIP_URL = "/back-end/rest/addoffer";
+const OFFERINTERNSHIP_URL = "/back/rest/addoffer";
 
-// 
-export async function addOffer(offer) {
+export async function addOffer(offer, companyId) {
     const requestOptions = {
         method: 'POST',
         mode: 'cors', 
@@ -10,10 +9,11 @@ export async function addOffer(offer) {
         body: JSON.stringify(offer)
     };
 
-    const response = await fetch(OFFERINTERNSHIP_URL, requestOptions);
+    const response = await fetch(`${OFFERINTERNSHIP_URL}/${companyId}`, requestOptions);
     if (!response.ok) {
         const error = await response.text();
         throw new Error(error);
     }
     return await response.json();
 }
+

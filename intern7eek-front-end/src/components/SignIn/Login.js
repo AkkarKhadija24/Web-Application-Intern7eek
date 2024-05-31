@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import './Login.css'; // Importez le fichier CSS correspondant
+import { useNavigate } from 'react-router-dom';
 import { login } from './LoginService';
-
+import { Link } from 'react-router-dom';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            //console.log('Utilisateur connecté:');
             const userData = await login(email, password);
             // Traitement de la réponse du backend ici
             console.log('Utilisateur connecté:', userData);
+            navigate(`/companyspace?companyId=${userData}`);
         } catch (error) {
             setError('Erreur lors de la connexion. Veuillez vérifier vos identifiants.');
         }
@@ -40,7 +43,7 @@ const Login = () => {
                 {error && <div className="error">{error}</div>}
             </form>
             <a href="#">Forgot Password ?</a><br />
-            <a href="SignUpChoice.html">Create an account</a><br />
+            <Link to="/choixsignup">Create an account</Link><br />
         </div>
     );
 };

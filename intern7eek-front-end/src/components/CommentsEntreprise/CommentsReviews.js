@@ -1,41 +1,57 @@
 import React, { useEffect, useState } from 'react';
-import './CommentsReviews.css'; 
+import { useLocation } from 'react-router-dom';
 
-const Comments_URL = "/back-end/rest/comments";
+import './Comments.css'; 
 
-function CommentsReviews() {
-    const [reviews, setReviews] = useState([]);
-    const [error, setError] = useState(null);
+const COMMENTS_URL = "/back/rest/comments";
+
+function CommentsByCompany() {
+    const [comments, setComments] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const companyId = params.get('companyId');
 
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await fetch(Comments_URL);
+                const response = await fetch(`${COMMENTS_URL}/${companyId}`);
                 if (response.ok) {
-                    const comments = await response.json();
-                    setReviews(comments);
+                    const commentsData = await response.json();
+                    setComments(commentsData);
                 } else {
-                    setError('Failed to fetch comments');
+                    throw new Error('Failed to fetch comments');
                 }
             } catch (error) {
                 console.error('Failed to fetch comments', error);
-                setError('An error occurred while fetching comments');
+                setError('Failed to fetch comments');
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchComments();
-    }, []);
+    }, [companyId]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
-        <div className="comments-reviews-container">
-            <h2>Comments & Reviews</h2>
-            {error && <p className="error-message">{error}</p>}
-            <div className="reviews-container">
-                {reviews.map((review) => (
-                    <div key={review.id} className="review-card">
-                        <h3>{review.user}</h3>
-                        <p>{review.comment}</p>
-                        <p>Rating: {review.rating}/5</p>
+        <div>
+            <h2>Comments By Company {companyId}</h2>
+            <div className="comments-container">
+                {comments.map((comment) => (
+                    <div key={comment.id} className="comment-card">
+                        <h3>User: {comment.user}</h3>
+                        <p>Text: {comment.text}</p>
+                        <p>Date: {comment.date}</p>
                     </div>
                 ))}
             </div>
@@ -43,4 +59,4 @@ function CommentsReviews() {
     );
 }
 
-export default CommentsReviews;
+export default CommentsByCompany;
